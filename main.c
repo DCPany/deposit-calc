@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int proffit(int summa_vklada,int srok_vklada);
+float proffit(int summa_vklada,int srok_vklada);
 
 int main()
 {
@@ -13,14 +13,16 @@ int main()
 	printf("enter correct data! \n");
     else
 	{
-		printf("sum at the end of: ");
-        printf("%i \n",proffit(summa,srok));
+	printf("sum at the end of: ");
+	printf("%.0f \n",proffit(summa,srok));
+	printf("proffit of deposit: ");
+	printf("%.0f \n",proffit(summa,srok)-summa);
     }
     return 0;
 }
 
-int proffit(int summa_vklada,int srok_vklada){
-	int cashback=summa_vklada;
+float proffit(int summa_vklada,int srok_vklada){
+	float cashback=summa_vklada;
 	if(summa_vklada<100000)
 	{
 	    if ((srok_vklada > 0) && (srok_vklada <= 30)) 
