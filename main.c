@@ -18,3 +18,30 @@ int main()
     }
     return 0;
 }
+
+int proffit(int summa_vklada,int srok_vklada){
+	int cashback=summa_vklada;
+	if(summa_vklada<100000)
+	{
+	    if ((srok_vklada > 0) && (srok_vklada <= 30)) 
+        cashback*=0.9;
+        if ((srok_vklada > 30) && (srok_vklada <= 120)) 
+        cashback*=1.02;
+        if ((srok_vklada > 120) && (srok_vklada <= 240)) 
+        cashback*=1.06;
+         if ((srok_vklada > 240) && (srok_vklada <= 365)) 
+        cashback*=1.12;
+    }
+	else
+	{
+		if ((srok_vklada > 0) && (srok_vklada <= 30)) 
+        cashback*=0.9;
+        if ((srok_vklada > 30) && (srok_vklada <= 120)) 
+        cashback*=1.03;
+        if ((srok_vklada > 120) && (srok_vklada <= 240)) 
+        cashback*=1.08;
+         if ((srok_vklada > 240) && (srok_vklada <= 365)) 
+        cashback*=1.15;
+	}
+return cashback;
+}
